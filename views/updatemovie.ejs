@@ -1,0 +1,140 @@
+<html>
+
+<head>
+    <title>form </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+body { 
+        text-align:center; 
+      
+        font-family: "Roboto", Helvetica, Arial, sans-serif;
+        font-weight: 100;
+        font-size: 12px;
+        line-height: 30px;
+        color: #777;
+        background: #4CAF50;
+        
+    } 
+h1 { 
+        top:15%;
+        font-family: "Times New Roman", Times, serif;
+font-size: 40px;
+letter-spacing: 3px;
+word-spacing: -1.2px;
+color: #CDFFCC;
+font-weight: 700;
+text-decoration: none solid rgb(68, 68, 68);
+font-style: normal;
+font-variant: small-caps;
+text-transform: capitalize;
+    } 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.add {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+
+
+#form {
+  background: #F9F9F9;
+  padding: 25px;
+  margin: 150px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#form input[type="text"],
+#form input[type="email"],
+#form input[type="tel"],
+#form input[type="url"],
+#form textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+
+
+#form textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+#form button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #4CAF50;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+#genre{
+    width:100%;
+}
+#genn{
+    border: 1px solid #ccc;
+    width:100%;
+    text-align:left;
+}
+</style>
+
+<body>
+        <div class="add">
+            <Marquee>
+                <h1>Update Movie</h1>
+            </Marquee>
+        <form id="form" method="post" action="/update">
+      
+        <fieldset>
+            <input type="hidden" name="_id"  value="<%= movie._id %>"/>
+            <input  type="text" name="name" tabindex="1" value="<%= movie.name %>">
+        </fieldset>
+        <fieldset id="genn">
+            SELECT THE GENRE:
+        </fieldset>
+        <fieldset>
+            <select id="genre" name="genre" value="<%= movie.genre %>">
+                <option value="comedy">Comedy</option>
+                <option value="horror">Horror</option>
+                <option value="romance">Romance</option>
+                <option value="adventure">Adventure</option>
+                <option value="drama">Drama</option>
+                <option value="science fiction">Science Fiction</option>
+                <option value="action">Action</option>
+                <option value="thriller">Thriller</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <input  type="text" name="cast" tabindex="3" value="<%= movie.cast%>" required >
+        </fieldset>
+        <fieldset>
+            <textarea tabindex="5" name="description" value="<%= movie.description%>" required></textarea>
+        </fieldset>
+        <fieldset>
+            <button name="submit" type="submit" id="contact-submit" >Submit</button>
+        </fieldset>
+        
+    </form>
+    </body>
+    </html>
